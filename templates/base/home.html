@@ -1,0 +1,251 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% include 'includes/alerts.html' %}
+<!-- Main Content Sample START - VCare -->
+
+<header class="py-5 vc_hheader">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center my-5">
+                    <h2 class="display-8 fw-bolder text-white mb-2">Feel free with your well being</h2>
+                    <p class="lead text-white-50 mb-4">Quick assessment of your disease or illness, we resource you
+                        with the world’s most popular modern techologies with just a click!</p>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
+                        <a class="btn btn-outline-light btn-lg px-4" href="{% url 'main' %}">Book Appointments</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 vc_hheader_anim">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_xgdvjjxc.json" id="vc_hheader_anim1"
+                    class="vc_hheader_animloader" background="transparent" speed="1" loop autoplay></lottie-player>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<div id="vc_periodic_div">
+    <div>
+        <center><img style="width: 400px;" src="{% static 'images/health_checkup_anim.gif' %}" alt="Health Care ">
+        </center>
+    </div>
+    <div id="vc_periodic_txt">
+        <center><i class="fa fa-check-circle fa-5x" style="color: lightgreen;"></i></center>
+        <h3>Clarify your Doubts & Supports your well being</h3>
+        <p>Quick assessment of your disease or illness, we resource you with the world’s most popular modern
+            techologies with just a click!</p>
+    </div>
+</div>
+
+<section class="bg-light py-5 border-bottom">
+    <div class="container px-5 my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bolder">Vcare Interests & Goals</h2>
+            <p class="lead mb-0">We find happiness in your good health & happiness</p>
+        </div>
+        <div class="row gx-5 justify-content-center">
+
+            <div class="col-lg-6 col-xl-4">
+                <div class="card mb-5 mb-xl-0">
+                    <div class="card-body p-5">
+                        <div class="mb-3">
+                            <span style="font-size: 25px;" class="fw-bold">Who we are</span>
+                        </div>
+                        <ul class="list mb-4">
+                            <li class="mb-2">HealthCare Service Providers</li>
+                            <li class="mb-2">Helps the needed</li>
+                            <li class="mb-2"> Analyses your health</li>
+                            <li class="mb-2"> Suggests your the best-rated hospitals</li>
+                            <li class="mb-2"> Health Prediction Analyser</li>
+                        </ul>
+                        <div class="d-grid"><a class="btn btn-primary" href="#!">Click If your agree</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-xl-4">
+                <div class="card mb-5 mb-xl-0">
+                    <div class="card-body p-5">
+                        <div class="mb-3">
+                            <span style="font-size: 25px;" class="fw-bold">What we provide</span>
+                        </div>
+                        <ul class="list mb-4">
+                            <li class="mb-2">Help and prays</li>
+                            <li class="mb-2">Best Searching filters</li>
+                            <li class="mb-2"> Affordable services</li>
+
+                            <li class="mb-2"> Dedicated support</li>
+                            <li class="mb-2"> Minimal Three-Party Connections</li>
+                        </ul>
+                        <div class="d-grid"><a class="btn btn-primary" href="#!">Click If your agree</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-xl-4">
+                <div class="card mb-5 mb-xl-0">
+                    <div class="card-body p-5">
+                        <div class="mb-3">
+                            <span style="font-size: 25px;" class="fw-bold">Who we achieve</span>
+                        </div>
+                        <ul class="list mb-4">
+                            <li class="mb-2"> Good Response by customers</li>
+                            <li class="mb-2"> Happiness & Joy</li>
+                            <li class="mb-2"> Ideas to increase health</li>
+                            <li class="mb-2"> Economic Growth & Stability</li>
+                            <li class="mb-2"> Lots of supports and encouragements</li>
+                        </ul>
+                        <div class="d-grid"><a class="btn btn-primary" href="#!">Click If your agree</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="vc_home_userslider">
+    <center>
+        <div class="text-center mb-5">
+            <h2 class="fw-bolder text-white">Our Team Members</h2>
+            <p class="lead mb-0 text-white">These people promises to helps and care for the welfare of the people.
+            </p>
+        </div>
+        <div class="abtus_pioneerslider">
+            <div class="card user_card">
+                <div class="img-wrapper"><img src="{% static 'images/avatar_1.jpg' %}" alt="Pioneer 01"
+                        class="abtus_pimg" /></div>
+                <div class="card-body">
+                    <h5 class="card-title">Sajo Sam</h5>
+                    <div class="abtus_pdata">
+                        <p class="card-text"><b>Qualification: </b><br>BCA Graduate</p>
+                        <p class="card-text"><b>GitHub: </b><br><a class="abtus_plinks-redirect"
+                                href="www.linkedin.com/in/sanio-luke-sebastian-7b48921b0">https://www.linkedin.com/in/sajo-sam-337819178/</a>
+                        </p>
+                        <p class="card-text"><b>Linked-In: </b><br><a class="abtus_plinks-redirect"
+                                href="https://github.com/sajosam/">https://github.com/sajosam/</a></p>
+                        <p class="card-text abtus_plinks-redirect"><b>Gmail: </b><br>sajo2023b@mca.ajce.in</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card user_card">
+                <div class="img-wrapper"><img src="{% static 'images/avatar_2.jpg' %}" alt=" Pioneer 01"
+                        class="abtus_pimg" /></div>
+                <div class="card-body">
+                    <h5 class="card-title">Sanio Luke Sebastian</h5>
+                    <div class="abtus_pdata">
+                        <p class="card-text"><b>Qualification: </b><br>BCA Graduate</p>
+                        <p class="card-text"><b>GitHub: </b><br><a class="abtus_plinks-redirect"
+                                href="www.linkedin.com/in/sanio-luke-sebastian-7b48921b0">www.linkedin.com/in/sanio-luke-sebastian-7b48921b0</a>
+                        </p>
+                        <p class="card-text"><b>Linked-In: </b><br><a class="abtus_plinks-redirect"
+                                href="https://github.com/SanioLuke">https://github.com/SanioLuke</a></p>
+                        <p class="card-text abtus_plinks-redirect"><b>Gmail: </b><br>saniolukesbeastian2023b@mca.ajce.in
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card user_card">
+                <div class="img-wrapper"><img src="{% static 'images/avatar_3.jpg' %}" alt="Pioneer 01"
+                        class="abtus_pimg" /></div>
+                <div class="card-body">
+                    <h5 class="card-title">Justin V Kalappura</h5>
+                    <div class="abtus_pdata">
+                        <p class="card-text"><b>Qualification: </b><br>BSC Physics</p>
+                        <p class="card-text"><b>GitHub: </b><br><a class="abtus_plinks-redirect"
+                                href="https://www.linkedin.com/in/justin-v-kalappura-3aab65213">https://www.linkedin.com/in/justin-v-kalappura-3aab65213</a>
+                        </p>
+                        <p class="card-text"><b>Linked-In: </b><br><a class="abtus_plinks-redirect"
+                                href="https://github.com/SanioLuke">https://github.com/SanioLuke</a></p>
+                        <p class="card-text abtus_plinks-redirect"><b>Gmail: </b><br>justin150598@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card user_card">
+                <div class="img-wrapper"><img src="{% static 'images/avatar_4.jpg' %}" alt="Pioneer 01"
+                        class="abtus_pimg" /></div>
+                <div class="card-body">
+                    <h5 class="card-title">Susan Sebastian</h5>
+                    <div class="abtus_pdata">
+                        <p class="card-text"><b>Qualification: </b><br>BCA Graduate</p>
+                        <p class="card-text"><b>GitHub: </b><br><a class="abtus_plinks-redirect"
+                                href="https://www.linkedin.com/in/susan-sebastian-347b72156">https://www.linkedin.com/in/susan-sebastian-347b72156</a>
+                        </p>
+                        <p class="card-text"><b>Linked-In: </b><br><a class="abtus_plinks-redirect"
+                                href="https://github.com/susansebastian">https://github.com/susansebastian</a></p>
+                        <p class="card-text abtus_plinks-redirect"><b>Gmail: </b><br>susansebastian2023b@mca.ajce.in</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card user_card">
+                <div class="img-wrapper"><img src="{% static 'images/avatar_5.jpg' %}" alt="Pioneer 01"
+                        class="abtus_pimg" /></div>
+                <div class="card-body">
+                    <h5 class="card-title">Blessy Sajeev</h5>
+                    <div class="abtus_pdata">
+                        <p class="card-text"><b>Qualification: </b><br>BCA Graduate</p>
+                        <p class="card-text"><b>GitHub: </b><br><a class="abtus_plinks-redirect"
+                                href="https://www.linkedin.com/in/blessy-sajeev-030854198">https://www.linkedin.com/in/blessy-sajeev-030854198</a>
+                        </p>
+                        <p class="card-text"><b>Linked-In: </b><br><a class="abtus_plinks-redirect"
+                                href="https://github.com/blessysajeev">https://github.com/blessysajeev</a></p>
+                        <p class="card-text abtus_plinks-redirect"><b>Gmail: </b><br>blessysajeev2023a@mca.ajce.in</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+</div>
+
+<!-- Main Content Sample END - VCare -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="{% static 'js/usercardjs.js' %}"></script>
+<script src="{% static 'js/slick.min.js' %}"></script>
+<script>
+    $('.abtus_pioneerslider').slick({
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false,
+        lazyLoad: true,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 1
+            }
+        }, {
+            breakpoint: 480,
+            settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 1
+            }
+        }]
+    });
+</script>
+
+
+
+{% endblock content %}

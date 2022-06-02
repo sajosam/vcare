@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}
+
+VCare | Diabetes Pred
+
+{% endblock title %}
+
+
+{% block content %}
+
+<section>
+	<article style="font-size: 20px;">
+		<h1>Diabetes</h1>
+		<p>Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood
+			glucose is your main source of energy and comes from the food you eat. Insulin, a hormone made by the
+			pancreas, helps glucose from food get into your cells to be used for energy. Sometimes your body doesn't
+			make enough-or any-insulin or doesn't use insulin well. Glucose then stays in your blood and doesn't reach
+			your cells.</p>
+		<p>Over time, having too much glucose in your blood can cause health problems. Although diabetes has no cure,
+			you can take steps to manage your diabetes and stay healthy.</p>
+		<img src="{% static 'images/diabets1.jpg' %}" alt="Heart" style="height: 250px; width: 320px">
+		<img src="{% static 'images/diabets2.webp' %}" alt="Heart" style="height: 250px; width: 320px">
+		<p>Sometimes people call diabetes "a touch of sugar" or "borderline diabetes." These terms suggest that someone
+			doesn't really have diabetes or has a less serious case, but every case of diabetes is serious.</p>
+		<p>As of 2015, 30.3 million people in the United States, or 9.4 percent of the population, had diabetes. More
+			than 1 in 4 of them didn't know they had the disease. Diabetes affects 1 in 4 people over the age of 65.
+			About 90-95 percent of cases in adults are type 2 diabetes.</p>
+	</article>
+	<article id="form-article">
+		<form name="heartData" method="POST" action="{% url 'diPredResult' %}">
+			{% csrf_token %}
+			<div>
+				<input type="text" class="restingBP" id="restingBP" name="age" placeholder="Enter your age"
+					onchange="validateAge()" required>
+
+
+				<input type="text" class="restingBP" name="glucose" placeholder="Enter glucose rate" required>
+				<input type="text" class="restingBP" name="Insulin" placeholder="Enter insulin level" required>
+				<input type="text" class="restingBP" name="BMI" placeholder="Enter BMI rate" required>
+				<input type="text" class="restingBP" name="DiabetesPedigreeFunction"
+					placeholder="Enter diabetes pedigree function" required>
+				<button id="p_button" class="button" style="vertical-align:middle"><span>Submit</span></button>
+			</div>
+		</form>
+	</article>
+</section>
+{% endblock content %}

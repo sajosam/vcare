@@ -1,0 +1,60 @@
+{% extends 'base/base.html' %}
+
+
+
+{% block title %}
+
+VCare | Login
+
+{% endblock title %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<div id="vcare_log_maincontainer">
+    <div id="vcare_log_imgdiv">
+        <img src="{% static 'images/login_anim.gif' %}" alt="Login Page Image" id="vcare_log_img" />
+    </div>
+    <form id="vcare_log_formdiv" method="POST" action="{% url 'login' %}" class="text-center">
+        {% include 'includes/alerts.html' %}
+        {{error}}
+        {% csrf_token %}
+        <img src="{% static 'images/apple-touch-icon.png' %}" alt="Icon" id="login_webicon" /><br>
+        <h1 style="font-weight: 600px;text-decoration: underline;margin-bottom: 40px;">Login</h1>
+        <div class="vcare_forminputsdiv" id="login_email_div">
+            <label for="log_emailid"><i class="fa fa-envelope formicons mt-2" aria-hidden="true"></i></label>
+            <input type="email" id="log_emailid" name="email" placeholder="Enter your Email ID" class="form-control"
+                required />
+        </div>
+
+        <div class="vcare_forminputsdiv">
+            <label for="log_passwrd"><i class="fa fa-key formicons mt-2" aria-hidden="true" for></i></label>
+            <input type="password" id="log_passwrd" name="password" placeholder="Enter your password"
+                class="form-control" required />
+        </div>
+
+        <div class="vcare_forminputsdiv">
+            <input type="submit" id="log_submitbtn" name="submit" value="Login" class="form-control" />
+        </div>
+
+        <div id="reg_linkdiv">
+            <span>Have no account to login ?</span>
+            <b><a href="{% url 'signup' %}">Register Here</a></b>
+        </div>
+    </form>
+</div>
+
+<div id="login_subfooter">
+    <p id="login_subfooter_txt">© 2018 Dept. of Computer Applications, Amal Jyothi College of Engineering. Powered
+        by <a href="#">Blogger</a>.</p>
+    <div id="login_subfooter_opt">
+        <a href="#">Privacy</a>
+        <a href="#">Security</a>
+        <a href="#">Help</a>
+    </div>
+</div>
+
+{% endblock content %}

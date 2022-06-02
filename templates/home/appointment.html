@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+
+<section>
+	<article id="form-article">
+		<form name="heartData" method="POST" action="{% url 'a_confirmation' %}">
+			{% csrf_token %}
+			<div>
+				<div style="width:50%;margin-left:24%">
+					<center>
+						<h3>Take Appointment Now</h3>
+					</center>
+					<input type="text" id="patientName" name="name" placeholder="Enter name..." required
+						class="restingBP">
+					<input type="text" id="email" name="email" placeholder="Enter email..." required class="restingBP">
+					<input type="text" id="contact" name="contact" placeholder="Enter contact number..." required
+						class="restingBP">
+					<div class="grid-container" style="margin-left: 10%">
+
+						<input type="radio" checked id="sex" name="gender" value="Male">Male
+						<input type="radio" id="sex" name="sex" value="Female">Female
+					</div>
+					<input type="text" id="age" name="age" placeholder="Enter your age" required class="restingBP">
+					<select name="dr" class="restingBP">
+						<option disabled="disabled" selected="selected">Choose the doctor</option>
+						<option value="{{d.d_name}}">{{d.d_name}}</option>
+					</select>
+					<select name="h" class="restingBP">
+						<option disabled="disabled" selected="selected">Choose the hospital</option>
+						<option value="{{d.h_name}}">{{d.h_name}}</option>
+					</select>
+					<select name="spec" class="restingBP">
+						<option disabled="disabled" selected="selected">Select the specialization</option>
+						<option value="{{d.s_name}}">{{d.s_name}}</option>
+					</select>
+					<input type="date" id="date" name="date" placeholder="Enter date..." required class="restingBP">
+					<select name="fee" class="restingBP">
+						<option disabled="disabled" selected="selected">Select the Fees</option>
+						<option value="{{d.fee}}">{{d.fee}}</option>
+					</select>
+					<textarea id="symptoms" name="sy" placeholder="Enter your symptoms" class="restingBP"></textarea>
+					<button id="p_button" class="button" style="vertical-align:middle"><span>Submit</span></button>
+				</div>
+
+			</div>
+		</form>
+	</article>
+</section>
+{% endblock content %}

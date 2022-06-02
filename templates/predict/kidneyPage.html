@@ -1,0 +1,106 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}
+
+VCare | Kidney Pred
+
+{% endblock title %}
+
+
+{% block content %}
+
+<section>
+	<article style="font-size: 20px;">
+		<h1>Kidney Disease</h1>
+		<p>Chronic kidney disease includes conditions that damage your kidneys and decrease their ability to keep you
+			healthy by filtering wastes from your blood. If kidney disease worsens, wastes can build to high levels in
+			your blood and make you feel sick.</p>
+		<p>Kidney disease also increases your risk of having heart and blood vessel disease. These problems may happen
+			slowly over a long time. Early detection and treatment can often keep chronic kidney disease from getting
+			worse. When kidney disease progresses, it may eventually lead to kidney failure, which requires dialysis or
+			a kidney transplant to maintain life.</p>
+		<img src="{% static 'images/kidney1.jpg' %}" alt="Heart" style="height: 250px; width: 320px">
+		<img src="{% static 'images/kidney2.jpg' %}"" alt=" Heart" style="height: 250px; width: 320px">
+
+		<p>37 million American adults have CKD, and millions of others are at increased risk.Early detection can help
+			prevent the progression of kidney disease to kidney failure.Heart disease is the primary cause of death for
+			all people with CKD</p>
+		<p>Diabetes and high blood pressure, or hypertension, are responsible for two-thirds of chronic kidney disease
+			cases.
+			<p>Diabetes: Diabetes occurs when your blood sugar remains too high. Over time, unmanaged blood sugar can
+				cause damage to many organs in your body, including the kidneys and heart and blood vessels, nerves, and
+				eyes.</p>
+			<p>High blood pressure: High blood pressure occurs when your blood pressure against the walls of your blood
+				vessels increases. If uncontrolled or poorly controlled, high blood pressure can be a leading cause of
+				heart attacks, strokes, and chronic kidney disease. Also, chronic kidney disease can cause high blood
+				pressure.</p>
+	</article>
+	<article id="form-article">
+		<form name="heartData" method="POST" action="{% url 'kidneyPredResult' %}">
+			{% csrf_token %}
+			<div>
+				<input type="text" id="age" class="restingBP" name="age" placeholder="Enter your age"
+					onchange="validateAge()" required>
+				<div class="grid-container">
+					<input type="radio" checked id="sex" name="sex" value="1">Male
+					<input type="radio" id="sex" name="sex" value="0">Female
+				</div>
+				<input type="text" id="restingBP" class="restingBP" name="blood_pressure" class="form_control"
+					placeholder="Enter blood pressure" required>
+				<select name="albumin" class="restingBP">
+					<option disabled="disabled" selected="selected">Select Albumin rate</option>
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+				</select>
+				<input type="text" id="restingBP" class="restingBP" name="blood_glucose_random"
+					placeholder="Enter blood glucose random" required>
+				<input type="text" id="cholestoral" class="restingBP" name="blood_urea"
+					placeholder="Enter blood urea rate" required>
+				<input type="text" id="cholestoral" class="restingBP" name="serum_creatinine"
+					placeholder="Enter serum creatinine level" required>
+				<input type="text" id="cholestoral" class="restingBP" name="haemoglobin"
+					placeholder="Enter hemoglobin levelrequired" required>
+				<input type="text" id="cholestoral" class="restingBP" name="packed_cell_volume"
+					placeholder="Enter packed cell volume rate" required>
+				<input type="text" id="cholestoral" class="restingBP" name="white_blood_cell_count"
+					placeholder="Enter white blood cells count" required>
+				<input type="text" id="cholestoral" class="restingBP" name="red_blood_cell_count"
+					placeholder="Enter red blood cells count" required>
+				<select name="hypertension" class="restingBP">
+					<option disabled="disabled" selected="selected">Hypertension</option>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</select>
+				<select name="diabetes_mellitus" class="restingBP">
+					<option disabled="disabled" selected="selected">Diabetes mellitus</option>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</select>
+				<select name="coronary_artery_disease" class="restingBP">
+					<option disabled="disabled" selected="selected">Coronary artery disease</option>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</select>
+				<select name="appetite" class="restingBP">
+					<option disabled="disabled" selected="selected">Appetite</option>
+					<option value="1">Good</option>
+					<option value="0">Poor</option>
+				</select>
+				<select name="aanemia" class="restingBP">
+					<option disabled="disabled" selected="selected">Anemia</option>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</select>
+				<button id="p_button" style="vertical-align:middle"><span>Submit</span></button>
+			</div>
+		</form>
+	</article>
+</section>
+
+
+{% endblock content %}

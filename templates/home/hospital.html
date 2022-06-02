@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+
+VCare | Hospitals
+
+{% endblock title %}
+
+
+{% block content %}
+{% include 'includes/search.html' %}
+
+
+{% if messages %}
+
+{% include 'includes/alerts.html' %}
+
+{{error}}
+{% endif %}
+
+
+{% for h in hospitals %}
+
+<div class="card" id="hospital_card_div">
+    <img class="card-img-top" src="{{h.h_image.url}}" alt="Card image cap">
+    <div class="card-body">
+        <p id="hospital_name_txt">{{h.h_name}}</p>
+        <p><b>Address: </b><small>{{h.address}}</small></p>
+        <p><b>Email: </b><small>{{h.email}}</small></p>
+        <p><b>Contact No: </b><small>{{h.contact}}</small></p>
+        <a href="{% url 'doctor' h.id %}" style="width: 50%;" class="btn btn-primary">View the doctors</a>
+    </div>
+</div>
+
+{% endfor %}
+
+
+
+{% endblock content %}

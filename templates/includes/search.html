@@ -1,0 +1,54 @@
+<center>
+    <form id="search_hospital_form" action="{% url 'hospital' %}" method="post">
+        {% csrf_token %}
+
+        <div id="search_drop_opts">
+            <div class="search_opt_drop_div">
+                <select name="location" class="search_opt_drop" required>
+
+                    {% if 'backpred' not in request.path %}
+                    {% for l in drop_location %}
+                    <option value="{{l}}">{{l}}</option>
+                    {% endfor %}
+                    <option value="Trivandrum" disabled>Trivandrum</option>
+                    <option value="Kollam" disabled>Kollam</option>
+                    <option value="Alapuzha" disabled>Alapuzha</option>
+                    <option value="Kochi" disabled>Kochi</option>
+                    {% else %}
+                    {% for s in drop_location %}
+                    <option value="{{s}}">{{s}}</option>
+                    {% endfor %}
+                    <option value="Trivandrum" disabled>Trivandrum</option>
+                    <option value="Kollam" disabled> Kollam</option>
+                    <option value="Alapuzha" disabled>Alapuzha</option>
+                    <option value="Kochi" disabled>Kochi</option>
+
+                    {% endif %}
+
+                </select>
+            </div>
+
+            <div class="search_opt_drop_div">
+                <select name="spec" class="search_opt_drop" required>
+
+                    {% if 'backpred' not in request.path %}
+                    {% for s in drop_spec %}
+                    <option value="{{s}}">{{s}}</option>
+                    {% endfor %}
+                    {% else %}
+                    {% for s in drop_spec %}
+
+                    <option value="{{s}}">{{s}}</option>
+                    {% endfor %}
+
+                    {% endif %}
+
+                </select>
+
+                </select>
+            </div>
+        </div>
+
+        <input type="submit" name="searchbar_submit" id="searchbar_submit" value="Search">
+    </form>
+</center>

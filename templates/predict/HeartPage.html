@@ -1,0 +1,106 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}
+
+VCare | Heart Pred
+
+{% endblock title %}
+
+
+{% block content %}
+
+
+
+<section>
+	<article style="font-size: 20px;">
+		<h1>Heart Disease</h1>
+		<p>The heart beats about 2.5 billion times over the average lifetime, pushing millions of gallons of blood to
+			every part of the body. This steady flow carries with it oxygen, fuel, hormones, other compounds, and a host
+			of essential cells. It also whisks away the waste products of metabolism. When the heart stops, essential
+			functions fail, some almost instantly.</p>
+		<p>The term heart disease is often used interchangeably with the term cardiovascular disease. Cardiovascular
+			disease generally refers to conditions that involve narrowed or blocked blood vessels that can lead to a
+			heart attack, chest pain (angina) or stroke.</p>
+		<img src="{% static 'images/heart1.jpg' %}" alt="Heart" style="height: 250px; width: 320px">
+		<img src="{% static 'images/heart2.jpg' %}" alt="Heart" style="height: 250px; width: 320px">
+		<p>Heart rate is measured in beats per minute or bpm. A normal resting heart rate in adults is anywhere between
+			60 and 80 beats per minute and it is best measured when you are either lying down or while you are sitting.
+			You should be in a calm state. For athletes, the resting heart rate can even be as low as 30 to 40 bpm.</p>
+		<p>There are many different forms of heart disease. The most common cause of heart disease is narrowing or
+			blockage of the coronary arteries, the blood vessels that supply blood to the heart itself. This is called
+			coronary artery disease and happens slowly over time. It's the major reason people have heart attacks.</p>
+		<p>Around 1 in 4 deaths in the U.S. occur due to heart disease, and the condition affects all genders as well as
+			all racial and ethnic groups. In this article, learn more about the types, causes, and symptoms of heart
+			disease.</p>
+	</article>
+	<article id="form-article">
+		<form name="heartData" method="POST" action="{% url 'heartPredResult' %}">
+			{% csrf_token %}
+			<div>
+				<input type="text" id="age" class="restingBP" name="age" placeholder="Enter your age"
+					onchange="validateAge()">
+				<div class="grid-container">
+					<input type="radio" checked id="sex" name="sex" value="1">Male
+					<input type="radio" id="sex" name="sex" value="0">Female
+				</div>
+				<select name="chestPain" class="restingBP">
+					<option disabled=" disabled" selected="selected">Select chest pain value</option>
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+				</select>
+				<input type="text" id="restingBP" class="restingBP" name="restingBP"
+					placeholder="Enter resting blood pressure">
+				<input type="text" id="cholestoral" class="restingBP" name="cholestoral"
+					placeholder="Enter serum cholestoral in mg/dl">
+				<select name="bloodSugar" class="restingBP">
+					<option disabled=" disabled" selected="selected">Is your fasting blood sugar> 120 mg/dl</option>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</select>
+				<select name="restingCardio" class="restingBP">
+					<option disabled=" disabled" selected="selected">Select resting electrocardiographic value</option>
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+				</select>
+				<input type="text" id="maxHeartRate" class="restingBP" name="maxHeartRate"
+					placeholder="Enter maximum heart rate achieved">
+				<select name="angina" class="restingBP">
+					<option disabled=" disabled" selected="selected">exercise induced angina</option>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</select>
+				<input type="text" id="oldpeak" class="restingBP" name="oldpeak"
+					placeholder="Enter ST depression induced by exercise">
+				<select name="peakSlope" class="restingBP">
+					<option disabled=" disabled" selected="selected">Select slope of the peak exercise ST segment
+					</option>
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+				</select>
+				<select name="flourosopy" class="restingBP">
+					<option disabled=" disabled" selected="selected">Select the number of major vessels colored by
+						flourosopy</option>
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+				</select>
+				<select name="Thalassemia" class="restingBP">
+					<option disabled=" disabled" selected="selected">Select Thalassemia value</option>
+					<option value="1">Normal</option>
+					<option value="2">Fixed defect</option>
+					<option value="3">Reversible defect</option>
+				</select>
+				<button id="p_button" style="vertical-align:middle"><span>Submit</span></button>
+			</div>
+		</form>
+	</article>
+</section>
+
+{% endblock content %}

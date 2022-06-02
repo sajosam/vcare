@@ -1,0 +1,147 @@
+{% extends 'base/base.html' %}
+
+
+{% block title %}
+
+VCare | Signup
+
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+<div id="vcare_reg_maincontainer">
+    <div id="vcare_reg_imgdiv">
+        <img src="{% static 'images/login_anim.gif' %}" alt="Login Page Image" id="vcare_reg_img" />
+    </div>
+    <form method="POST" id="vcare_reg_formdiv" name="vcare_reg_formdiv" class="text-center" action="{% url 'signup' %}">
+        {% csrf_token %}
+        <img src=" {% static 'images/apple-touch-icon.png' %}" alt="Icon" id="reg_webicon" /><br>
+        <h1 style="font-weight: 600px;text-decoration: underline;margin-bottom: 40px;">Register</h1>
+
+        <div id="reg_namediv">
+            <div class="vcare_forminputsdiv">
+                <label for="reg_firstname"><i class="fa fa-user formicons mt-2" aria-hidden="true"></i></label>
+                <input type="text" id="reg_firstname" name="first_name" placeholder="Enter your First Name"
+                    class="form-control" required maxlength="20" minlength="3" />
+            </div>
+
+            <div class="vcare_forminputsdiv">
+                <label for="reg_lastname"><i class="fa fa-user formicons mt-2" aria-hidden="true"></i></label>
+                <input type="text" id="reg_lastname" name="last_name" placeholder="Enter your Last Name"
+                    class="form-control" required maxlength="20" minlength="3" />
+            </div>
+        </div>
+
+        <div id="reg_contdetailsdiv">
+            <div class="vcare_forminputsdiv">
+                <label for="reg_emailid"><i class="fa fa-envelope formicons mt-2" aria-hidden="true"></i></label>
+                <input type="email" id="reg_emailid" name="email" placeholder="Enter your Email ID" class="form-control"
+                    required maxlength="998" minlength="3" />
+            </div>
+
+            <div class="vcare_forminputsdiv">
+                <label for="reg_contact"><i class="fa fa-phone formicons mt-2" aria-hidden="true"></i></label>
+                <input type="number" id="reg_contact" class="number_demo form-control" name="phone_number"
+                    placeholder="Enter your contact number" class="form-control" required maxlength="13"
+                    minlength="13" />
+            </div>
+        </div>
+
+        <div id="reg_placedetailsdiv">
+            <div class="vcare_forminputsdiv">
+                <label for="reg_statedropdown"><i class="fa fa-home formicons mt-2" aria-hidden="true"></i></label>
+                <select name="state" id="reg_statedropdown" class="form-control" required>
+                    <option value="" selected disabled>Select your current state</option>
+                    <option value="Kerala">Kerala</option>
+                </select>
+            </div>
+
+            <div class="vcare_forminputsdiv">
+                <label for="reg_disdropdown"><i class="fa fa-home formicons mt-2" aria-hidden="true"></i></label>
+                <select name="district" id="reg_disdropdown" required class="form-control">
+                    <option value="" selected disabled>Select your current district</option>
+                    <option value="Trivandrum">Trivandrum</option>
+                    <option value="Kollam">Kollam</option>
+                    <option value="Pathanamthitta">Pathanamthitta</option>
+                    <option value="Alappuzha">Alappuzha</option>
+                    <option value="Kottayam">Kottayam</option>
+                    <option value="Idukki">Idukki</option>
+                    <option value="Ernakulam">Ernakulam</option>
+                    <option value="Thrissur">Thrissur</option>
+                    <option value="Palakkad">Palakkad</option>
+                    <option value="Malappuram">Malappuram</option>
+                    <option value="Kozhikode">Kozhikode</option>
+                    <option value="Wayanad">Wayanad</option>
+                    <option value="Kannur">Kannur</option>
+                    <option value="Kasaragod">Kasaragod</option>
+
+
+                </select>
+            </div>
+        </div>
+
+        <div id="reg_udetailsdiv">
+            <div class="vcare_forminputsdiv">
+                <label for="reg_dob"><i class="fa fa-calendar-times-o formicons mt-2" aria-hidden="true"></i></label>
+                <input type="date" id="reg_dob" name="dob" title="Enter your Date-of-Birth (dd-MM-yyyy)"
+                    class="form-control" required />
+            </div>
+
+            <div class="vcare_forminputsdiv">
+                <label for="reg_genderdropdown"><i class="fa fa-male formicons mt-2" aria-hidden="true"></i></label>
+                <select name="gender" id="reg_genderdropdown" required class="form-control">
+                    <option value="" selected disabled>Select your gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+
+                </select>
+            </div>
+        </div>
+
+        <div class="vcare_forminputsdiv">
+
+            {% include 'includes/alerts.html' %}
+            {{error}}
+            <label for="reg_lastname"><i class="fa fa-key formicons mt-2" aria-hidden="true"></i></label>
+            <input type="password" id="reg_passwrd" name="password" placeholder="Enter a new password"
+                class="form-control" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,100}$"
+                oninvalid="setCustomValidity('Password should contain : \n\nminimum 8 characters.\nat least 1 uppercase.\nat least 1 lowercase.\nat least 1 number.\nat least 1 special character --> !@#$%^&*_=+-')"
+                oninput="setCustomValidity('')" />
+        </div>
+        <div class="vcare_forminputsdiv">
+            <label for="reg_confrmpasswrd"><i class="fa fa-key formicons mt-2" aria-hidden="true"></i></label>
+            <input type="password" id="reg_confrmpasswrd" name="confirm_password" class="form-control"
+                placeholder="Re-type the new password" required
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,100}$"
+                oninvalid="setCustomValidity('Password should contain : \n\nminimum 8 characters.\nat least 1 uppercase.\nat least 1 lowercase.\nat least 1 number.\nat least 1 special character --> !@#$%^&*_=+-')"
+                oninput="setCustomValidity('')" />
+        </div>
+
+        <div class="vcare_forminputsdiv">
+            <input type="submit" id="reg_submitbtn" name="submit" value="Register" class="form-control" />
+        </div>
+
+        <div id="login_linkdiv">
+            <span>Already have an account ?</span>
+            <b><a href="{% url 'login' %}">Login Here</a></b>
+        </div>
+
+    </form>
+</div>
+
+<div id="reg_subfooter">
+    <p id="reg_subfooter_txt">© 2018 Dept. of Computer Applications, Amal Jyothi College of Engineering. Powered by
+        <a href="#">Blogger</a>.</p>
+    <div id="reg_subfooter_opt">
+        <a href="#">Privacy</a>
+        <a href="#">Security</a>
+        <a href="#">Help</a>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,65 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}
+
+VCare | Liver Pred
+
+{% endblock title %}
+
+
+{% block content %}
+
+<section id="p_section">
+	<article style="font-size: 20px;" id="p_article">
+		<h1>Liver Disease</h1>
+		<p>The liver is a major organ only found in vertebrates which performs many essential biological functions such
+			as detoxification of the organism, and the synthesis of proteins and biochemicals necessary for digestion
+			and growth.</p>
+		<p>The term "liver disease" refers to any of several conditions that can affect and damage your liver. Over
+			time, liver disease can cause cirrhosis (scarring). As more scar tissue replaces healthy liver tissue, the
+			liver can no longer function properly. Left untreated, liver disease can lead to liver failure and liver
+			cancer.</p>
+		<img src="{% static 'images/liver1.png' %}" alt="Heart" style="height: 250px; width: 320px">
+		<img src="{% static 'images/liver2.jpg' %}" alt="Heart" style="height: 250px; width: 320px">
+		<p>Overall, about 1 in 10 Americans (30 million in total) have some type of liver disease. About 5.5 million
+			people in the U.S. have chronic liver disease or cirrhosis.</p>
+		<p>Some types of liver disease are becoming more common in the U.S. because they are related to rising rates of
+			obesity. An estimated 20% to 30% of adults have excess fat in their liver, a condition called nonalcoholic
+			fatty liver disease (NAFD). This may be renamed metabolic-associated fatty liver disease (MAFLD) to reflect
+			its relationship to metabolic syndrome and conditions like diabetes, high blood pressure, high cholesterol
+			and obesity.</p>
+	</article>
+	<article id="form-article">
+		<form id="p_form" name="heartData" method="POST" action="{% url 'liverPredResult' %}">
+			{% csrf_token %}
+			<div id="p_div">
+				<input type="text" class="restingBP" name="age" placeholder="Enter your age" onchange="validateAge()"
+					required>
+				<div class="grid-container">
+					<input type="radio" checked id="sex" name="sex" value="1">Male
+					<input type="radio" id="sex" name="sex" value="0">Female
+				</div>
+				<input type="text" class="restingBP" name="total_bilirubin" placeholder="Enter total Bilirubin"
+					required>
+				<input type="text" class="restingBP" name="Direct_Bilirubin" placeholder="Enter direct Bilirubin"
+					required>
+				<input type="text" class="restingBP" name="Alkaline_Phosphotase"
+					placeholder="Enter alkaline phosphotase" required>
+				<input type="text" class="restingBP" name="Alamine_Aminotransferase"
+					placeholder="Enter alamine aminotransferase" required>
+				<input type="text" class="restingBP" name="Aspartate_Aminotransferase"
+					placeholder="Enter aspartate aminotransferase" required>
+				<input type="text" class="restingBP" name="Total_Protiens" placeholder="Enter total protiens rate"
+					required>
+				<input type="text" class="restingBP" name="Albumin" placeholder="Enter the rate albumin" required>
+				<input type="text" class="restingBP" name="Albumin_and_Globulin_Ratio"
+					placeholder="Enter albumin and globulin ratio" required>
+				<button id="p_button" style="vertical-align:middle"><span>Submit</span></button>
+			</div>
+		</form>
+	</article>
+</section>
+
+{% endblock content %}

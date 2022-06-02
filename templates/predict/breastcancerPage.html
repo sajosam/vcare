@@ -1,0 +1,108 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+
+VCare | Cancer Pred
+
+
+{% endblock title %}
+
+
+{% block content %}
+
+<section>
+	<article id="form-article">
+		<form name="heartData" method="POST" action="{% url 'cancerPredResult' %}">
+			{% csrf_token %}
+			<div>
+				<div style="margin-right: 50%; margin-top: 140px">
+					<input type="text" class="restingBP" name="mean_radius" placeholder="Enter mean radius" required>
+					<input type="text" class="restingBP" name="mean_perimeter" placeholder="Enter mean perimeter"
+						required>
+					<input type="text" class="restingBP" name="mean_smoothness" placeholder="Enter mean smoothness"
+						required>
+					<input type="text" class="restingBP" name="mean_concavity" placeholder="Enter mean concavity"
+						required>
+					<input type="text" class="restingBP" name="mean_symmetry" placeholder="Enter mean symmetry"
+						required>
+					<input type="text" class="restingBP" name="radius_error" placeholder="Enter radius error" required>
+					<input type="text" class="restingBP" name="perimeter_error" placeholder="Enter perimeter error"
+						required>
+					<input type="text" class="restingBP" name="smoothness_error" placeholder="Enter smoothness error"
+						required>
+					<input type="text" class="restingBP" name="concavity_error" placeholder="Enter concavity error"
+						required>
+					<input type="text" class="restingBP" name="symmetry_error" placeholder="Enter symmetry error"
+						required>
+					<input type="text" class="restingBP" name="worst_radius" placeholder="Enter worst radius" required>
+					<input type="text" class="restingBP" name="worst_perimeter" placeholder="Enter worst perimeter"
+						required>
+					<input type="text" class="restingBP" name="worst_smoothness" placeholder="Enter worst smoothness"
+						required>
+					<input type="text" class="restingBP" name="worst_concavity" placeholder="Enter worst concavity"
+						required>
+					<input type="text" class="restingBP" name="worst_fractal_dimension"
+						placeholder="Enter worst fractal dimension" required>
+				</div>
+
+				<div style="margin-left: 50%; margin-top: -870px">
+
+					<input type="text" class="restingBP" name="mean_texture" placeholder="Enter mean texture" required>
+
+					<input type="text" class="restingBP" name="mean_area" placeholder="Enter mean area" required>
+
+					<input type="text" class="restingBP" name="mean_compactness" placeholder="Enter mean compactness"
+						required>
+
+					<input type="text" class="restingBP" name="mean_concave_points"
+						placeholder="Enter mean concave points" required>
+
+					<input type="text" class="restingBP" name="mean_fractal_dimension"
+						placeholder="Enter mean fractal dimension" required>
+
+					<input type="text" class="restingBP" name="texture_error" placeholder="Enter texture error"
+						required>
+
+					<input type="text" class="restingBP" name="area_error" placeholder="Enter area error" required>
+
+					<input type="text" class="restingBP" name="compactness_error" placeholder="Enter compactness error"
+						required>
+
+					<input type="text" class="restingBP" name="concave_points_error"
+						placeholder="Enter concave points error" required>
+
+					<input type="text" class="restingBP" name="fractal_dimension_error"
+						placeholder="Enter fractal dimension error" required>
+
+					<input type="text" class="restingBP" name="worst_texture" placeholder="Enter worst texture"
+						required>
+
+					<input type="text" class="restingBP" name="worst_area" placeholder="Enter worst area" required>
+
+					<input type="text" class="restingBP" name="worst_compactness" placeholder="Enter worst compactness"
+						required>
+
+					<input type="text" class="restingBP" name="worst_concave_points"
+						placeholder="Enter worst concave points" required>
+
+					<input type="text" class="restingBP" name="worst_symmetry" placeholder="Enter worst symmetry"
+						required>
+
+
+				</div>
+				<div style="padding-left:140px; padding-bottom: 200px;">
+					<button id="p_button" class="button" style="vertical-align:middle"><span>Submit</span></button>
+				</div>
+			</div>
+		</form>
+	</article>
+</section>
+</body>
+
+</html>
+
+
+{% endblock content %}

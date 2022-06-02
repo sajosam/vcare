@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+
+
+{% block title %}
+
+VCare | Doctor
+
+{% endblock title %}
+
+
+{% block content %}
+
+
+{% for d in doctor %}
+
+<div id="doctor_card_div">
+    <img src="{{d.d_image.url}}" alt="Card image cap">
+    <div id="doc_details_div">
+        <div id="doc_basic_details">
+            <p id="doctor_name_txt">{{d.d_name}}</p>
+            <p><b>Qualification: </b><small>{{d.qualification}}</small></p>
+            <p><b>Email: </b><small>{{d.email}}</small></p>
+            <p><b></b><small></small></p>
+        </div>
+
+        <div id="doc_appointment_details">
+            <p><b>Appointment Fees: </b><small>&#x20B9; {{d.fee}}</small></p>
+            <p><b>Specilization </b><small>{{d.s_name}}</small></p>
+            <p><b>Year of Service: </b><small>{{d.yos}}</small></p>
+            <p>1022 patients visited</p>
+            <a href="{% url 'appointment' d.id %}" class="btn btn-success">Book Appointment</a>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+
+{% endblock content %}

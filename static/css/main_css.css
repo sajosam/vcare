@@ -1,0 +1,682 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline-style: none;
+  text-decoration: none;
+  font-family: "Poppins", Arial;
+}
+
+:root {
+  --color1: #4c5d70;
+  --color2: #f88379;
+  --color3: #fbe5c0;
+  --color4: #d0e6f0;
+}
+
+::-webkit-scrollbar {
+  background-color: white;
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color2);
+  border-radius: 5px;
+}
+
+/* ------------------------------------------------ NavVar CSS ----------------------------------------------------- */
+
+#main_navbar {
+  background-color: var(--color1);
+}
+
+.navbar-brand {
+  margin-left: 10px;
+  margin-right: 50px;
+}
+
+.dropdownMenuButton1 {
+  background-color: transparent;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 3px;
+}
+
+/* ------------------------------------------------ Footer CSS ----------------------------------------------------- */
+
+#home_footer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  color: rgb(240, 240, 240);
+  font-size: small;
+}
+
+.nav_dropdown {
+  margin-top: -3.5px;
+}
+
+.nav_dropdown:nth-of-type(2) {
+  margin-left: 7px;
+}
+
+#home_footer_prt1 {
+  display: flex;
+  flex-direction: row;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  background: var(--color1);
+}
+
+.news_latest_li:before {
+  content: "\21E8";
+  margin-left: -20px;
+  margin-right: 10px;
+}
+
+.news_latest_li {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.news_latest_li p {
+  margin-left: 5px;
+  color: var(--color3);
+  font-size: smaller;
+  margin-top: 2px;
+}
+
+#home_des {
+  flex: 0.9;
+}
+
+#each_servies,
+#each_prediction {
+  margin-top: 20px;
+}
+
+#each_servies ul li,
+#each_prediction ul li {
+  margin-left: -15px;
+}
+
+#each_servies ul li a,
+#each_prediction ul li a {
+  color: rgb(240, 240, 240);
+  text-decoration: none;
+}
+
+#each_servies ul li a:hover,
+#each_prediction ul li a:hover {
+  color: var(--color3);
+  font-weight: bold;
+}
+
+.each_services_hr {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.093);
+  border: none;
+  margin: 10px 0px;
+  width: 80%;
+}
+
+#home_quick_predictions {
+  margin-left: 50px;
+}
+
+#home_quick_predictions,
+#home_services,
+#home_contact_details {
+  flex: 1;
+}
+
+#contact_opts {
+  margin-top: 30px;
+  font-size: smaller;
+}
+
+#mail_opt,
+#phone_opt,
+#web_opt,
+#add_opt {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+#add_opt {
+  line-height: 17px;
+}
+
+#mail_opt p,
+#phone_opt p,
+#web_opt p,
+#add_opt p {
+  margin-left: 10px;
+}
+
+#contact_content_icons_divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.093);
+  border: none;
+  margin-top: 15px;
+}
+
+#contact_icons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+#contact_icons * {
+  text-decoration: none;
+  color: rgb(240, 240, 240);
+}
+
+#contact_icons * i {
+  margin-left: 15px;
+  font-size: medium;
+}
+
+#contact_icons * i:hover {
+  color: var(--color3);
+  transform: scale(1.3);
+  transition: 0.1s ease-in-out;
+}
+
+#home_footer_prt2 {
+  padding: 20px;
+  background-color: #1a1919;
+  display: flex;
+  flex-direction: row;
+}
+
+#home_footer_prt2 p,
+#home_footer_prt2 div {
+  flex: 1;
+}
+
+#privacy_opt {
+  text-align: end;
+}
+
+#privacy_opt * {
+  margin-right: 20px;
+  font-size: 15px;
+  color: var(--color3);
+  font-weight: bold;
+}
+
+#privacy_opt *:hover {
+  color: #fff;
+  transition: 0.2s ease-in-out;
+}
+
+/* Footer Media-Query */
+
+@media (min-width: 480px) and (max-width: 800px) {
+  #home_footer {
+    text-decoration: none;
+    text-align: center;
+  }
+  #home_footer_prt1 {
+    flex-direction: column;
+  }
+  #home_quick_predictions {
+    text-align: center;
+    margin-left: 0px;
+  }
+  #home_des,
+  #home_quick_predictions,
+  #home_services,
+  #home_contact_details {
+    margin-bottom: 40px;
+  }
+  #mail_opt,
+  #phone_opt,
+  #web_opt,
+  #add_opt {
+    flex-direction: column;
+  }
+  .news_latest_li {
+    list-style: none;
+  }
+  #each_servies,
+  #each_prediction {
+    margin-top: 0px;
+  }
+  #each_servies ul li,
+  #each_prediction ul li {
+    margin-left: 0px;
+    list-style: none;
+    margin-top: 15px;
+  }
+  .each_services_hr {
+    display: none;
+  }
+  #home_footer_prt2 {
+    flex-direction: column;
+  }
+  #contact_opts * {
+    justify-content: center;
+    flex-direction: row;
+  }
+  #contact_opts {
+    margin-top: 0px;
+  }
+  #contact_content_icons_divider {
+    margin-top: 20px;
+  }
+  #contact_icons {
+    justify-content: center;
+  }
+  #privacy_opt {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+/* ------------------------------------------------ LoginPage CSS ----------------------------------------------------- */
+
+#login_webicon,
+#reg_webicon {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: 2px solid var(--color1);
+}
+
+#vcare_log_maincontainer,
+#vcare_reg_maincontainer {
+  background: var(--color3);
+  display: flex;
+  flex-direction: row;
+}
+
+#vcare_log_imgdiv,
+#vcare_reg_imgdiv {
+  flex: 1.5;
+  background-color: #fff;
+  text-align: center;
+}
+
+#vcare_log_img,
+#vcare_reg_img {
+  height: 80%;
+  padding: 30px;
+  margin-top: 5%;
+  object-fit: contain;
+}
+
+#vcare_log_formdiv,
+#vcare_reg_formdiv {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.297);
+  border: 1px solid rgba(0, 0, 0, 0.342);
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0.226);
+  margin: 50px;
+  padding: 30px;
+}
+
+.vcare_forminputsdiv {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.formicons {
+  font-size: large;
+  color: var(--color1);
+}
+
+.vcare_forminputsdiv label {
+  flex: 0.05;
+  align-self: flex-end;
+}
+
+.vcare_forminputsdiv input,
+#reg_statedropdown,
+#reg_disdropdown,
+#reg_genderdropdown {
+  width: 90%;
+  border: 1px solid rgba(0, 0, 0, 0.649);
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-left: 7px;
+  flex: 1;
+}
+
+#reg_namediv,
+#reg_contdetailsdiv,
+#reg_placedetailsdiv,
+#reg_udetailsdiv {
+  display: flex;
+  flex-direction: row;
+}
+
+#reg_namediv div,
+#reg_contdetailsdiv div,
+#reg_placedetailsdiv div,
+#reg_udetailsdiv div {
+  flex: 1;
+}
+
+#reg_namediv div:first-of-type,
+#reg_contdetailsdiv div:first-of-type,
+#reg_placedetailsdiv div:first-of-type,
+#reg_udetailsdiv div:first-of-type {
+  margin-right: 20px;
+}
+
+#log_submitbtn,
+#reg_submitbtn {
+  padding: 5px 50px;
+  margin-top: 20px;
+  background-color: var(--color1);
+  color: white;
+  font-weight: bold;
+}
+
+#log_submitbtn:hover,
+#reg_submitbtn:hover {
+  box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0.282);
+}
+
+#login_linkdiv,
+#reg_linkdiv {
+  margin-top: 20px;
+}
+
+#login_linkdiv a,
+#reg_linkdiv a {
+  text-decoration: none;
+  color: black;
+}
+
+#login_linkdiv a:hover,
+#reg_linkdiv a:hover {
+  color: var(--color1);
+  transition: 0.2s ease-in-out;
+}
+
+#login_subfooter {
+  margin-top: 40px;
+}
+
+#login_subfooter,
+#reg_subfooter {
+  background-color: var(--color1);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+
+#login_subfooter_opt,
+#login_subfooter_txt,
+#reg_subfooter_opt,
+#reg_subfooter_txt {
+  flex: 1;
+}
+
+#login_subfooter_txt,
+#reg_subfooter_txt {
+  font-size: 13px;
+}
+
+#login_subfooter a,
+#reg_subfooter a {
+  text-decoration: none;
+  color: var(--color3);
+}
+
+#login_subfooter_opt,
+#reg_subfooter_opt {
+  text-align: end;
+}
+
+#login_subfooter_opt *,
+#reg_subfooter_opt * {
+  margin-left: 10px;
+}
+
+#login_subfooter a:hover,
+#reg_subfooter a:hover {
+  color: white;
+}
+
+.number_demo::-webkit-outer-spin-button,
+.number_demo::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.number_demo[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* LoginPage & Register Both Media-Query */
+
+@media (min-width: 480px) and (max-width: 950px) {
+  #vcare_log_maincontainer,
+  #vcare_reg_maincontainer {
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+  #login_subfooter,
+  #reg_subfooter {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 30px;
+  }
+  #login_subfooter_opt,
+  #reg_subfooter_opt {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+/* ---------------------------------- Hospital-Card CSS ------------------------------------------------- */
+
+#hospital_card_div {
+  font-family: "Poppins", Arial;
+  width: 60%;
+  /* margin: 10px; */
+  margin-left: 20%;
+  margin-top: 5%;
+  box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.119);
+  cursor: pointer;
+  text-align: center;
+}
+
+#hospital_card_div img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+#hospital_card_div div {
+  line-height: 15px;
+}
+
+#hospital_name_txt {
+  font-weight: bold;
+  font-size: large;
+}
+
+/* ---------------------------------- Doctor-Card CSS ------------------------------------------------- */
+
+#doctor_card_div {
+  font-family: "Poppins", Arial;
+  /* margin: 10px; */
+  margin-left: 20%;
+  margin-top: 5%;
+  padding: 20px;
+  border: 1px solid #0000004e;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.064);
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+}
+
+#doctor_card_div img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  border: 1px solid #0000004e;
+  object-fit: cover;
+  align-self: center;
+  margin-top: 10px;
+}
+
+#doctor_card_div div {
+  line-height: 15px;
+}
+
+#doctor_name_txt {
+  font-weight: bold;
+  font-size: large;
+}
+
+#doctor_card_div div {
+  margin-left: 20px;
+}
+
+#doc_details_div {
+  display: flex;
+  flex-direction: row;
+}
+
+#doc_basic_details {
+  flex: 2;
+}
+
+#doc_appointment_details {
+  flex: 1;
+}
+
+@media (min-width: 480px) and (max-width: 950px) {
+  #doctor_card_div {
+    flex-direction: column;
+    text-align: center;
+  }
+  #doc_details_div {
+    margin-top: 20px;
+    flex-direction: column;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline-style: none;
+  text-decoration: none;
+  font-family: "Poppins", Arial;
+}
+
+:root {
+  --color1: #4c5d70;
+  --color2: #f88379;
+  --color3: #fbe5c0;
+  --color4: #d0e6f0;
+}
+
+::-webkit-scrollbar {
+  background-color: white;
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color2);
+  border-radius: 5px;
+}
+
+/* ------------------------------------------------ SearchBar Page CSS ----------------------------------------------------- */
+
+#search_hospital_form {
+  background-color: rgba(255, 255, 255, 0.545);
+  box-shadow: 1px 2px 10px 5px rgba(0, 0, 0, 0.195);
+  padding: 20px;
+  display: inline-flex;
+  border: 1px solid rgba(0, 0, 0, 0.41);
+  border-radius: 5px;
+  margin-top: 50px;
+}
+
+#search_drop_opts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+#search_drop_opts div:nth-of-type(2) {
+  margin-left: 20px;
+}
+
+.search_opt_drop {
+  padding: 5px 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.search_opt_drop:focus {
+  border: 1px solid rgba(0, 229, 255, 0.514);
+  box-shadow: 0px 0px 1.5px 2px rgba(0, 229, 255, 0.514);
+}
+
+#searchbar_submit {
+  padding: 5px 20px;
+  color: white;
+  background-color: var(--color1);
+  border: none;
+  margin-left: 15px;
+  border-radius: 5px;
+}
+
+#searchbar_submit:hover {
+  /* color: var(--color1); */
+  /* background-color: white; */
+  background-image: linear-gradient(90deg, #7f99b6, #4c5d70);
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.195);
+  border-radius: 20px;
+  margin-left: 12px;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+}
+
+#search_page_results {
+  width: 100%;
+  height: 100%;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.597);
+}
+
+@media (min-width: 480px) and (max-width: 800px) {
+  #search_drop_opts {
+    flex-direction: column;
+  }
+  #search_drop_opts div:nth-of-type(2) {
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 0px;
+  }
+  #search_opt_drop_div {
+    text-align: center;
+  }
+  #search_hospital_form {
+    flex-direction: column;
+  }
+  #searchbar_submit {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+}

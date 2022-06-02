@@ -1,0 +1,80 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+
+<!-- Result Animation and Message -->
+<center>
+    <div id="resultmsg_div">
+        <h3>Prediction Result</h3>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_txlsmlkc.json" id="resultanim_container"
+            background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
+        <p id="resultmsg_txt">The analysis of the assessment predicts that you have approximately {{msg}}</p>
+        <small id="resultmsg_notemsg"><b>NOTE : </b> This prediction done is according to the real-time data from
+            hospitals and healhcare center. The result of this prediction should only be considered as a reference
+            to know the rough status of your health. Please don't consider the result as absolute and if you feel
+            major issues, please contact the healthcare centers as soon as possible. Some of the nearby centers as
+            listed below as well.</small>
+    </div>
+</center>
+
+<!-- Disease Details and Infos -->
+<div id="disease_details_div">
+    <div id="dd_header">
+        <h4><span id="dd_diseasename">{{d_name}}</span> - Things you want to know</h4>
+    </div>
+    <div id="dd_infos_container">
+        <div id="dd_symptoms" class="dd_div">
+            <h5 class="dd_divheader">Symptoms</h5>
+            <ul>
+
+                {% for s in symptoms %}
+
+                <li>{{s}}</li>
+
+                {% endfor %}
+
+
+            </ul>
+        </div>
+        <div id="dd_preventions" class="dd_div">
+            <h5 class="dd_divheader">Preventions</h5>
+            <ul>
+
+                {% for p in preventions %}
+                <li>{{p}}</li>
+
+                {% endfor %}
+
+
+            </ul>
+        </div>
+        <div id="dd_pmedication" class="dd_div">
+            <h5 class="dd_divheader">Primary Medication</h5>
+            <ul>
+
+                {% for pm in primarymedication %}
+
+                <li>{{pm}}</li>
+                {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Recommanded Hospitals -->
+<div id="resultpage_rhospitals_div">
+    <div id="rhospitals_header">
+        <h4>Recommanded Hospitals - <a href="{% url 'backpred' d_name %}"
+                style="text-decoration: none; color: #000"><button style="padding: 5px; border-radius: 10px;">Click
+                    Here</button></a> </h4>
+    </div>
+    <div id="rhospitals_card_container">
+        <!-- The hospital cards should be listed here below. -->
+    </div>
+</div>
+
+
+{% endblock content %}

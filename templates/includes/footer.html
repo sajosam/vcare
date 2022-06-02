@@ -1,0 +1,101 @@
+{% load static %}
+
+<footer id="home_footer">
+
+    <div id="home_footer_prt1">
+        <div id="home_des">
+            <img src="{% static 'images/android-chrome-512x512.png' %}" alt="Icon" width="50px" height="50px" /><br><br>
+            <h3>Vcare</h3>
+            <br>
+            <h5>Feel free with your well being</h5>
+            <p style="margin-top: 10px;">We the Vcare family helps you to cherish your life with no tension about your
+                health and lets you live your every moment of your life with happy face.</p>
+        </div>
+
+        <div id="home_quick_predictions">
+            <h5>Quick Predictions</h5>
+
+            <div id="each_prediction">
+                <ul>
+                    <li><a href="{% url 'heartPred' %}">Heart Disease</a></li>
+                    <hr class="each_services_hr">
+                    <li><a href="{% url 'liverPred' %}">Indian Liver Patient</a></li>
+                    <hr class="each_services_hr">
+                    <li><a href="{% url 'diPred' %}">Prima Indian Diabetes</a></li>
+                    <hr class="each_services_hr">
+                    <li><a href="{% url 'kidneyPred' %}">Kidney Disease</a></li>
+                    <hr class="each_services_hr">
+                    <li><a href="{% url 'cancerPred' %}">Breast Cancer</a></li>
+                    <hr class="each_services_hr">
+                </ul>
+            </div>
+        </div>
+
+        <div id="home_services">
+            <h5>Servies</h5>
+
+            <div id="each_servies">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <hr class="each_services_hr">
+                    <li><a href="#">Disease Predictions</a></li>
+                    <hr class="each_services_hr">
+                    <li><a href="#">Book Appointments</a></li>
+                    <hr class="each_services_hr">
+                    <li><a href="#">Live Appointments</a></li>
+                    <hr class="each_services_hr">
+                    <li><a href="#">Contact Us</a></li>
+                    <hr class="each_services_hr">
+                    <li><a href="#">About Us</a></li>
+                    <hr class="each_services_hr">
+                </ul>
+            </div>
+        </div>
+
+        <div id="home_contact_details">
+            <h5>Contact Us</h5>
+
+            <div id="contact_opts">
+                <div id="mail_opt">
+                    <i class="fa fa-envelope"></i>
+                    <p>vcareforever@gmail.com</p>
+                </div>
+
+                <div id="phone_opt">
+                    <i class="fa fa-phone"></i>
+                    <p>+91 986-3474-384</p>
+                </div>
+
+                <div id="web_opt">
+                    <i class="fa fa-globe"></i>
+                    <p>https://vcare@contact.in</p>
+                </div>
+
+                <div id="add_opt">
+                    <i class="fa fa-map-marker"></i>
+                    <p>P.O Kanjirapally - Erumely Road,<br>Koovappally, Kerala 686518</p>
+                </div>
+            </div>
+
+            <hr id="contact_content_icons_divider">
+
+            <div id="contact_icons">
+                <a href="#"><i class="fa fa-facebook-square"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-whatsapp"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="home_footer_prt2">
+        <p>© 2022 Dept. of HealthCare Organization, Vcare HealthCare Private Ltd.</p>
+        <div id="privacy_opt">
+            <a href="#">Privacy</a>
+            <a href="#">Security</a>
+            <a href="#">Help</a>
+        </div>
+    </div>
+</footer>
