@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ou4y7$ligz^9h@p*^)q1qkp#tm=9-mj18befjrc__!blgnm@!5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -105,28 +105,28 @@ AUTH_USER_MODEL = 'accounts.Account'
 #     }
 # }
 
-DATABASES = {
+# DATABASES = {
 
-    'default': {
+#     'default': {
 
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME': 'health',
+#         'NAME': 'health',
 
-        'USER': 'postgres',
+#         'USER': 'postgres',
 
-        'PASSWORD': 'root',
+#         'PASSWORD': 'root',
 
-        'HOST': 'localhost',
+#         'HOST': 'localhost',
 
-        'PORT': '5433',
+#         'PORT': '5433',
 
-    }
+#     }
 
-}
+# }
 
 
-# DATABASES = {'default':dj_database_url.config(default='postgres://postgres:root@localhost/health')}
+DATABASES = {'default':dj_database_url.config(default='postgres://postgres:root@localhost/health')}
 
 
 # Password validation
