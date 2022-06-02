@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ou4y7$ligz^9h@p*^)q1qkp#tm=9-mj18befjrc__!blgnm@!5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['shielded-hamlet-73480.herokuapp.com','127.0.0.1']
 
@@ -149,7 +149,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE =  'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
