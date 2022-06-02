@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', Arial;
+}
+
+:root {
+    --color1: #4C5D70;
+    --color2: #F88379;
+    --color3: #FBE5C0;
+    --color4: #D0E6F0;
+}
+
+::-webkit-scrollbar {
+    background-color: white;
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color2);
+    border-radius: 5px;
+}
+
+
+/* ------------------------------------------------ SearchBar Page CSS ----------------------------------------------------- */
+
+#search_hospital_form {
+    background-color: rgba(255, 255, 255, 0.545);
+    box-shadow: 1px 2px 10px 5px rgba(0, 0, 0, 0.195);
+    padding: 20px;
+    display: inline-flex;
+    border: 1px solid rgba(0, 0, 0, 0.41);
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+#search_drop_opts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#search_drop_opts div:nth-of-type(2) {
+    margin-left: 20px;
+}
+
+.search_opt_drop {
+    padding: 5px 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.search_opt_drop:focus {
+    border: 1px solid rgba(0, 229, 255, 0.514);
+    box-shadow: 0px 0px 1.5px 2px rgba(0, 229, 255, 0.514);
+}
+
+#searchbar_submit {
+    padding: 5px 20px;
+    color: white;
+    background-color: var(--color1);
+    border: none;
+    margin-left: 15px;
+    border-radius: 5px;
+}
+
+#searchbar_submit:hover {
+    /* color: var(--color1); */
+    /* background-color: white; */
+    background-image: linear-gradient(90deg, #7f99b6, #4C5D70);
+    border: 1px solid #fff;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.195);
+    border-radius: 20px;
+    margin-left: 12px;
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+}
+
+#search_page_results {
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.597);
+}
+
+@media (min-width: 480px) and (max-width: 800px) {
+    #search_drop_opts {
+        flex-direction: column;
+    }
+    #search_drop_opts div:nth-of-type(2) {
+        flex-direction: column;
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+    #search_opt_drop_div {
+        text-align: center;
+    }
+    #search_hospital_form {
+        flex-direction: column;
+    }
+    #searchbar_submit {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+}
+
+
+/* ---------------------------------------- Prediction Result Page CSS --------------------------------------------- */
+
+#resultpage_body {
+    background-color: var(--color3);
+}
+
+#resultmsg_div {
+    width: 40%;
+    background-color: #f88479;
+    border: 1px solid rgba(0, 0, 0, 0.210);
+    box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.250);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 30px;
+    color: white;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#resultanim_container {
+    align-self: center;
+}
+
+#resultmsg_txt {
+    padding: 10px;
+    color: #000;
+    margin-top: 10px;
+    background-color: white;
+    box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0.23);
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#disease_details_div,
+#resultpage_rhospitals_div {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+#dd_infos_container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.dd_divheader {
+    text-decoration: underline;
+}
+
+#dd_symptoms ul {
+    margin-top: 20px;
+    list-style-type: "🛎️  ";
+}
+
+#dd_preventions ul {
+    margin-top: 20px;
+    list-style-type: "✨  ";
+}
+
+#dd_pmedication ul {
+    margin-top: 20px;
+    list-style-type: "💊  ";
+}
+
+#dd_symptoms ul li,
+#dd_preventions ul li,
+#dd_pmedication ul li {
+    margin-top: 10px;
+}
+
+.dd_div {
+    padding: 10px;
+    background-color: var(--color3);
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.173);
+    border: 1px solid rgba(0, 0, 0, 0.292);
+    border-radius: 5px;
+    margin-left: 15px;
+    flex: 1;
+}
+
+#rhospitals_card_container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 480px) and (max-width: 800px) {
+    #resultmsg_div {
+        width: 60%;
+    }
+    #resultmsg_txt {
+        font-size: small;
+        margin-top: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #dd_infos_container {
+        flex-direction: column;
+        margin-top: 0px;
+    }
+    .dd_div {
+        margin-top: 20px;
+    }
+    #disease_details_div {
+        margin-top: 0px;
+    }
+    #dd_symptoms ul,
+    #dd_preventions ul,
+    #dd_pmedication ul {
+        margin-top: 0px;
+    }
+    #dd_symptoms ul li,
+    #dd_preventions ul li,
+    #dd_pmedication ul li {
+        margin-top: 0px;
+    }
+    .dd_div {
+        margin-left: 0px;
+    }
+    #resultmsg_notemsg {
+        font-size: x-small;
+    }
+}
+
+
+/* ---------------------------------------- About Us Page CSS --------------------------------------------- */
+
+#aboutus_body {
+    background-color: var(--color3);
+}
+
+#aboutus_header {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color3);
+}
+
+#abt_header_anim,
+#abt_header_anim2,
+#aboutus_header h1 {
+    flex: 1;
+    align-self: center;
+    text-align: center;
+}
+
+#aboutus_content_moto {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px 100px;
+    border-top: 5px double var(--color1);
+    border-bottom: 5px double var(--color1);
+    background-color: white;
+}
+
+#aboutus_content_moto h5,
+#aboutus_promises h5,
+#aboutus_pioneers h5 {
+    color: var(--color1);
+}
+
+#aboutus_promises,
+#aboutus_pioneers {
+    text-align: center;
+    margin-top: 50px;
+    border-top: 5px double var(--color1);
+    border-bottom: 5px double var(--color1);
+    background-color: white;
+    padding: 10px;
+}
+
+#promises_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.promise_div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px 30px;
+}
+
+#abtheader_anim1 {
+    width: 300px;
+    height: 300px;
+}
+
+#abtheader_anim2 {
+    width: 500px;
+    height: 500px;
+}
+
+.promise_card {
+    flex: 1;
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+    box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0.275);
+    background-color: var(--color2);
+    color: white;
+}
+
+.pcard_right {
+    margin-left: 20px;
+}
+
+.abtus_pioneerslider {
+    width: 70%;
+    margin-top: 20px;
+}
+
+.user_card {
+    margin-left: 20px;
+    padding: 10px;
+    box-shadow: 1px 2px 5px 3px rgba(0, 0, 0, 0.263);
+}
+
+.abtus_pimg {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+
+.abtus_pdata {
+    text-align: start;
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+.abtus_plinks-redirect {
+    text-decoration: none;
+    color: black;
+    text-align: start;
+    font-size: 13px;
+    display: inline-block;
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+
+#aboutus_contact {
+    text-align: center;
+    margin-top: 50px;
+    border-top: 5px double var(--color1);
+    border-bottom: 5px double var(--color1);
+    background-color: var(--color1);
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#abtus_cdetails {
+    margin-top: 30px;
+}
+
+#abtus_cform {
+    min-width: 300px;
+    padding: 20px;
+    align-self: center;
+    border-radius: 10px;
+    border: 2px solid #8b530091;
+    background-color: white;
+    box-shadow: none;
+    margin: 40px 0px;
+    box-shadow: 0px 5px 5px 5px rgba(119, 113, 113, 0.068), 0px 0px 5px 5px rgba(104, 98, 98, 0.137);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#contact_fname,
+#contact_lname,
+#contact_emailid,
+#contact_msg {
+    border: 1px solid rgb(112, 11, 11);
+    background-color: white;
+    box-shadow: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 10px 20px;
+}
+
+#contact_msg {
+    margin-top: 10px;
+}
+
+.contact_emailid_disabled:focus {
+    outline-width: 0;
+}
+
+#contact_submit_btn {
+    background-color: var(--color1);
+    box-shadow: none;
+    border: none;
+    border: 1px solid white;
+    cursor: pointer;
+    margin-top: 30px;
+    font-weight: bold;
+    color: var(--color1);
+    padding: 5px 0px;
+    border-radius: 5px;
+    color: white;
+}
+
+#contact_submit_btn:hover {
+    background-color: var(--color3);
+    border: 1px solid var(--color1);
+    color: var(--color1);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.123);
+    transition: 0.3s ease-in-out;
+}
+
+@media (min-width: 200px) and (max-width: 800px) {
+    #aboutus_header {
+        flex-direction: column;
+    }
+    #abtheader_anim1 {
+        width: 200px;
+        height: 200px;
+    }
+    #abtheader_anim2 {
+        width: 400px;
+        height: 400px;
+    }
+    .promise_card {
+        font-size: small;
+    }
+    .abtus_pioneerslider {
+        width: 90%;
+    }
+    .user_card {
+        margin-left: 10px;
+    }
+    .abtus_pimg {
+        width: 80px;
+        height: 80px;
+    }
+    .abtus_plinks-redirect {
+        font-size: 13px;
+    }
+}

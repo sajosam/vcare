@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ou4y7$ligz^9h@p*^)q1qkp#tm=9-mj18befjrc__!blgnm@!5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -50,6 +50,18 @@ INSTALLED_APPS = [
 
 ]
 
+# MIDDLEWARE = [
+#     'django.middleware.security.SecurityMiddleware',
+#     'django.contrib.sessions.middleware.SessionMiddleware',
+#     'django.middleware.common.CommonMiddleware',
+#     'django.middleware.csrf.CsrfViewMiddleware',
+#     'django.contrib.auth.middleware.AuthenticationMiddleware',
+#     'django.contrib.messages.middleware.MessageMiddleware',
+#     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+#     'whitenoise.middleware.clickjacking.XFrameOptionsMiddleware',
+#     'whitenoise.middleware.WhiteNoiseMiddleware',
+# ]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -58,9 +70,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    
 ]
 
 ROOT_URLCONF = 'Healthcare.urls'
@@ -81,6 +90,7 @@ TEMPLATES = [
     },
 ]
 
+# WSGI_APPLICATION = 'Healthcare.wsgi.application'
 WSGI_APPLICATION = 'Healthcare.wsgi.application'
 
 AUTH_USER_MODEL = 'accounts.Account'
@@ -95,28 +105,28 @@ AUTH_USER_MODEL = 'accounts.Account'
 #     }
 # }
 
-# DATABASES = {
+DATABASES = {
 
-#     'default': {
+    'default': {
 
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-#         'NAME': 'health',
+        'NAME': 'health',
 
-#         'USER': 'postgres',
+        'USER': 'postgres',
 
-#         'PASSWORD': 'root',
+        'PASSWORD': 'root',
 
-#         'HOST': 'localhost',
+        'HOST': 'localhost',
 
-#         'PORT': '5433',
+        'PORT': '5433',
 
-#     }
+    }
 
-# }
+}
 
 
-DATABASES = {'default':dj_database_url.config(default='postgres://postgres:root@localhost/health')}
+# DATABASES = {'default':dj_database_url.config(default='postgres://postgres:root@localhost/health')}
 
 
 # Password validation
@@ -137,6 +147,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -189,5 +202,3 @@ EMAIL_USE_TLS = True
 
 
 
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
