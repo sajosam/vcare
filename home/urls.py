@@ -1,5 +1,5 @@
-from turtle import home
-from django.contrib import admin
+# from turtle import home
+# from django.contrib import admin
 from django.urls import path
 from . import views
 
