@@ -96,28 +96,28 @@ AUTH_USER_MODEL = 'accounts.Account'
 #     }
 # }
 
-# DATABASES = {
+DATABASES = {
 
-#     'default': {
+    'default': {
 
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-#         'NAME': 'health',
+        'NAME': 'health',
 
-#         'USER': 'postgres',
+        'USER': 'postgres',
 
-#         'PASSWORD': 'root',
+        'PASSWORD': 'root',
 
-#         'HOST': 'localhost',
+        'HOST': 'localhost',
 
-#         'PORT': '5433',
+        'PORT': '5433',
 
-#     }
+    }
 
-# }
+}
 
 
-DATABASES = {'default':dj_database_url.config(default='postgres://postgres:root@localhost/health')}
+# DATABASES = {'default':dj_database_url.config(default='postgres://postgres:root@localhost/health')}
 
 
 # Password validation
@@ -138,10 +138,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATICFILES_STORAGE =  'django.contrib.staticfiles.storage.StaticFilesStorage'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -183,6 +182,7 @@ cloudinary.config(
   api_key = "771635138879244", 
   api_secret = "xRzCMTMfTek2bEJ4VyIMdffSm0g" 
 )
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587

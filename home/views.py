@@ -15,6 +15,8 @@ def home(request):
 def about(request):
     return render(request, 'base/AboutUs.html')
 
+
+
 def main(request):
     # get details from hospital table
     hospitals = Hospital.objects.all()
@@ -40,6 +42,7 @@ def hospital(request):
         specilization=Doctor.objects.filter(s_name__s_name=spec,h_name__district=location).values_list('h_name')
         drop_spec=Doctor.objects.filter(s_name__s_name=spec,h_name__district=location).values_list('s_name')
         hospitals=Hospital.objects.filter(id__in=specilization)
+        
         drop_spec=Specialization.objects.filter(id__in=drop_spec).values_list('s_name',flat=True).distinct()
         drop_location=Hospital.objects.filter(district=location).values_list('district',flat=True).distinct()
         if specilization:
